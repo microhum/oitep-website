@@ -12,6 +12,12 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@theme {
+  --color-meadow-1: #b8c95a;
+  --color-meadow-2: #7e8f2a;
+  --color-meadow-3: #42400c;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
