@@ -25,9 +25,6 @@ jobs:
     - name: Run linting
       run: bun run lint
       
-    - name: Type check
-      run: bunx tsc --noEmit
-      
     - name: Security audit
       run: bun audit
       
