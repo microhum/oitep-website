@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-linear-to-br from-meadow-1 to-meadow-2 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-linear-to-br from-meadow-1 via-meadow-2 to-meadow-3 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div
@@ -18,7 +18,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Quote */}
           <div className="text-center lg:text-left">
-            <h1 className="text-xl md:text-3xl lg:text-5xl font-semibold text-white mb-8 leading-2">
+            <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-white mb-8 leading-4">
               Reduce Your Salt Craving With{" "}
               <span className="text-meadow-3 relative inline-flex items-center">
                 <Image
@@ -30,11 +30,11 @@ export default function Hero() {
                 />
               </span>
             </h1>
-            <p className="text-xl md:text-2xl font-light text-white/90 mb-12 max-w-2xl">
+            <p className="text-xl md:text-2xl font-medium text-white/90 mb-12 max-w-2xl">
               Discover a healthier way to satisfy your taste buds while
               maintaining your well-being.
             </p>
-            <button className="bg-meadow-3 hover:cursor-pointer hover:border-white border-meadow-3 border-2 text-white px-8 py-2 rounded-lg text-lg font-semibold transition-all duration-100 transform">
+            <button className="capitalize bg-meadow-3 hover:cursor-pointer hover:border-white border-meadow-3 border-2 text-white px-6 py-2 rounded-lg text-lg font-bold transition-all duration-100 transform">
               Try it out !
             </button>
           </div>
