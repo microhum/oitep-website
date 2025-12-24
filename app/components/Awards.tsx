@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Awards() {
   return (
-    <section className="h-[20vh] min-h-[120px] bg-white border-2 border-white flex items-center">
+    <section className="h-[20vh] min-h-30 bg-white border-2 border-white flex items-center">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 w-full">
         <h2 className="text-center text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-gray-700 mb-2 md:mb-4">
           Our Partners
@@ -35,7 +35,7 @@ export default function Awards() {
               className="h-6 sm:h-8 md:h-10 lg:h-12 xl:h-14 w-auto object-contain max-w-full"
             />
           </div>
-          <div className="flex items-center justify-center grayscale opacity-30 hover:opacity-50 transition-opacity duration-300 p-2 md:p-3 hidden sm:flex">
+          <div className="items-center justify-center grayscale opacity-30 hover:opacity-50 transition-opacity duration-300 p-2 md:p-3 hidden sm:flex">
             <Image
               src="/static/Elements/Awards/Siriraj_Hosptital.png"
               alt="Siriraj Hospital"
@@ -44,7 +44,7 @@ export default function Awards() {
               className="h-6 sm:h-8 md:h-10 lg:h-12 xl:h-14 w-auto object-contain max-w-full"
             />
           </div>
-          <div className="flex items-center justify-center grayscale opacity-30 hover:opacity-50 transition-opacity duration-300 p-2 md:p-3 hidden md:flex">
+          <div className="flex items-center justify-center grayscale opacity-30 hover:opacity-50 transition-opacity duration-300 p-2 md:p-3 md:flex">
             <Image
               src="/static/Elements/Awards/TED_Youth_Startup_LOGO.png"
               alt="TED Youth Startup"
