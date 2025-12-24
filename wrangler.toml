@@ -1,0 +1,10 @@
+# Cloudflare Pages configuration
+name = "oitep-website"
+compatibility_date = "2024-01-01"
+
+[build]
+command = "bun run build"
+cwd = ""
+
+[env.production]
+compatibility_flags = ["nodejs_compat"]

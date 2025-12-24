@@ -1,0 +1,22 @@
+# EXAMPLE USAGE:
+#
+#   Refer for explanation to following link:
+#   https://lefthook.dev/configuration/
+#
+pre-push:
+  jobs:
+    - name: packages audit
+      tags:
+        - frontend
+        - security
+      run: bun audit
+    - name: lint check
+      run: bun run lint
+      glob: "*.{js,ts,jsx,tsx}"
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: lint staged files
+      run: bun run lint --fix {staged_files}
+      glob: "*.{js,ts,jsx,tsx}"
