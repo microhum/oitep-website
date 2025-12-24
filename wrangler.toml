@@ -8,3 +8,7 @@ cwd = ""
 
 [env.production]
 compatibility_flags = ["nodejs_compat"]
+
+# Specify assets directory for static export
+[assets]
+directory = "./out"
