@@ -2,82 +2,80 @@ import Image from "next/image";
 
 export default function Teams() {
   return (
-    <section className="min-h-screen bg-white py-16">
+    <section className="min-h-screen bg-white">
+      <div className=" bg-meadow-2 px-6 py-6 pt-24  text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 md:mb-12">
+        <div className="inline-flex w-full justify-center gap-3">
+          <h1>Teams</h1>
+        </div>
+      </div>
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 w-full">
-        <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 md:mb-12">
-          Our Teams
-        </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {/* Kasidit Wiboonkiat */}
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-6">
-              <div className="grayscale hover:grayscale-0 transition-all duration-300 rounded-full overflow-hidden border-4 border-meadow-2 p-2">
-                <Image
-                  src="/static/Elements/Teams/Kasidit_Wiboonkiat.png"
-                  alt="Mr. Kasidit Wiboonkiat (Kong)"
-                  width={200}
-                  height={200}
-                  className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 object-cover rounded-full"
-                />
-              </div>
+          <div className="relative bg-white rounded-lg shadow-lg overflow-hidden h-96 group">
+            <Image
+              src="/static/Elements/Teams/Kasidit_Wiboonkiat.png"
+              alt="Kasidit Wiboonkiat"
+              fill
+              className="object-cover grayscale group-hover:grayscale-0 brightness-30 group-hover:brightness-70 transition-all duration-300"
+            />
+            <div className="absolute inset-0 bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
+            <div className="relative z-10 p-6 flex flex-col justify-end h-full text-white">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">
+                Kasidit Wiboonkiat
+              </h3>
+              <p className="text-sm sm:text-base text-gray-200 mb-1">
+                Medicine, Faculty of Medicine Siriraj Hospital, Mahidol
+                University
+              </p>
+              <p className="text-sm sm:text-base font-semibold text-meadow-2">
+                Co-Founder & Chief Product Officer (CFO)
+              </p>
             </div>
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2">
-              Mr. Kasidit Wiboonkiat (Kong)
-            </h3>
-            <p className="text-sm sm:text-base text-gray-600 mb-1">
-              Medicine, Faculty of Medicine Siriraj Hospital, Mahidol University
-            </p>
-            <p className="text-sm sm:text-base font-semibold text-meadow-3">
-              Co-Founder & Director of Research and Development
-            </p>
           </div>
 
           {/* Pongpanoot Kasembunyakorn */}
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-6">
-              <div className="grayscale hover:grayscale-0 transition-all duration-300 rounded-full overflow-hidden border-4 border-meadow-2 p-2">
-                <Image
-                  src="/static/Elements/Teams/Pongpanoot_Kasembunyakorn.png"
-                  alt="Mr. Pongpanoot Kasembunyakorn (Hoff)"
-                  width={200}
-                  height={200}
-                  className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 object-cover rounded-full"
-                />
-              </div>
+          <div className="relative bg-white rounded-lg shadow-lg overflow-hidden h-96 group">
+            <Image
+              src="/static/Elements/Teams/Pongpanoot_Kasembunyakorn.png"
+              alt="Pongpanoot Kasembunyakorn"
+              fill
+              className="object-cover grayscale group-hover:grayscale-0 brightness-30 group-hover:brightness-70 transition-all duration-300"
+            />
+            <div className="absolute inset-0 bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
+            <div className="relative z-10 p-6 flex flex-col justify-end h-full text-white">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">
+                Pongpanoot Kasembunyakorn
+              </h3>
+              <p className="text-sm sm:text-base text-gray-200 mb-1">
+                Biomedical Engineering, Srinakharinwirot University
+              </p>
+              <p className="text-sm sm:text-base font-semibold text-meadow-2">
+                Co-Founder & Chief Executive Officer (CEO)
+              </p>
             </div>
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2">
-              Mr. Pongpanoot Kasembunyakorn (Hoff)
-            </h3>
-            <p className="text-sm sm:text-base text-gray-600 mb-1">
-              Biomedical Engineering, Srinakharinwirot University
-            </p>
-            <p className="text-sm sm:text-base font-semibold text-meadow-3">
-              Co-Founder & Director of Operations
-            </p>
           </div>
 
           {/* Guntee Doungmanee */}
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-6">
-              <div className="grayscale hover:grayscale-0 transition-all duration-300 rounded-full overflow-hidden border-4 border-meadow-2 p-2">
-                <Image
-                  src="/static/Elements/Teams/Guntee_Doungmanee.png"
-                  alt="Mr. Guntee Doungmanee (Piang)"
-                  width={200}
-                  height={200}
-                  className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 object-cover rounded-full"
-                />
-              </div>
+          <div className="relative bg-white rounded-lg shadow-lg overflow-hidden h-96 group">
+            <Image
+              src="/static/Elements/Teams/Guntee_Doungmanee.png"
+              alt="Guntee Doungmanee"
+              fill
+              className="object-cover grayscale group-hover:grayscale-0 brightness-30 group-hover:brightness-70  transition-all duration-300"
+            />
+            <div className="absolute inset-0 bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
+            <div className="relative z-10 p-6 flex flex-col justify-end h-full text-white">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">
+                Guntee Doungmanee
+              </h3>
+              <p className="text-sm sm:text-base text-gray-200 mb-1">
+                Computer Engineering, King Mongkut&#39;s University of
+                Technology Thonburi
+              </p>
+              <p className="text-sm sm:text-base font-semibold text-meadow-2">
+                Co-Founder & Chief Technology Officer (CTO)
+              </p>
             </div>
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2">
-              Mr. Guntee Doungmanee (Piang)
-            </h3>
-            <p className="text-sm sm:text-base text-gray-600 mb-1">
-              Computer Engineering, King Mongkut&#39;s University of Technology Thonburi
-            </p>
-            <p className="text-sm sm:text-base font-semibold text-meadow-3">
-              Co-Founder & Director of Technology
-            </p>
           </div>
         </div>
       </div>
