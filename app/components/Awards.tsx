@@ -8,7 +8,7 @@ export default function Awards() {
           Our Partners
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-3 lg:gap-4 xl:gap-6 items-center">
-          <div className="flex items-center justify-center grayscale opacity-30 hover:opacity-50 transition-opacity duration-300 p-2 md:p-3">
+          <div className="flex items-center justify-center grayscale hover:grayscale-0 opacity-30 hover:opacity-50 transition-opacity duration-300 p-2 md:p-3">
             <Image
               src="/static/Elements/Awards/MIT_Hacking_Medicine_Logo_Slogan_Blue_OG_Transparent.png"
               alt="MIT Hacking Medicine"
@@ -17,7 +17,7 @@ export default function Awards() {
               className="h-6 sm:h-8 md:h-10 lg:h-12 xl:h-14 w-auto object-contain max-w-full"
             />
           </div>
-          <div className="flex items-center justify-center grayscale opacity-30 hover:opacity-50 transition-opacity duration-300 p-2 md:p-3">
+          <div className="flex items-center justify-center grayscale hover:grayscale-0 opacity-30 hover:opacity-50 transition-opacity duration-300 p-2 md:p-3">
             <Image
               src="/static/Elements/Awards/KX_Knowledge_Exchange.png"
               alt="KX Knowledge Exchange"
@@ -26,7 +26,7 @@ export default function Awards() {
               className="h-6 sm:h-8 md:h-10 lg:h-12 xl:h-14 w-auto object-contain max-w-full"
             />
           </div>
-          <div className="flex items-center justify-center grayscale opacity-30 hover:opacity-50 transition-opacity duration-300 p-2 md:p-3">
+          <div className="flex items-center justify-center grayscale hover:grayscale-0 opacity-30 hover:opacity-50 transition-opacity duration-300 p-2 md:p-3">
             <Image
               src="/static/Elements/Awards/MHESI.png"
               alt="MHESI"
@@ -35,7 +35,7 @@ export default function Awards() {
               className="h-6 sm:h-8 md:h-10 lg:h-12 xl:h-14 w-auto object-contain max-w-full"
             />
           </div>
-          <div className="items-center justify-center grayscale opacity-30 hover:opacity-50 transition-opacity duration-300 p-2 md:p-3 hidden sm:flex">
+          <div className="items-center justify-center grayscale hover:grayscale-0 opacity-30 hover:opacity-50 transition-opacity duration-300 p-2 md:p-3 hidden sm:flex">
             <Image
               src="/static/Elements/Awards/Siriraj_Hosptital.png"
               alt="Siriraj Hospital"
@@ -44,7 +44,7 @@ export default function Awards() {
               className="h-6 sm:h-8 md:h-10 lg:h-12 xl:h-14 w-auto object-contain max-w-full"
             />
           </div>
-          <div className="flex items-center justify-center grayscale opacity-30 hover:opacity-50 transition-opacity duration-300 p-2 md:p-3 md:flex">
+          <div className="flex items-center justify-center grayscale hover:grayscale-0 opacity-30 hover:opacity-50 transition-opacity duration-300 p-2 md:p-3 md:flex">
             <Image
               src="/static/Elements/Awards/TED_Youth_Startup_LOGO.png"
               alt="TED Youth Startup"

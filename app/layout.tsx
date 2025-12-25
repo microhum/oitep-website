@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Raleway } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
-const inter = Raleway({
+const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
