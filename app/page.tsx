@@ -3,6 +3,7 @@ import ProblemStatement from "./components/ProblemStatement";
 import Awards from "./components/Awards";
 import ProductPreview from "./components/ProductPreview";
 import ProofSection from "./components/ProofSection";
+import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -10,9 +11,10 @@ export default function Home() {
     <main>
       <Hero />
       <Awards />
+      <ProblemStatement />
       <ProductPreview />
       <ProofSection />
-      <ProblemStatement />
+      <ContactSection />
       <Footer />
     </main>
   );

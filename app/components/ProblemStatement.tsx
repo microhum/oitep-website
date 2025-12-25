@@ -2,100 +2,75 @@ import Image from "next/image";
 
 export default function ProblemStatement() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-linear-to-br py-10 from-meadow-1 via-meadow-2 to-meadow-3 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundRepeat: "repeat",
-          }}
-        ></div>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-          {/* Left Side - Auntie Ann Image */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <Image
-                src="/static/Elements/Introduce/Auntie_ann.png"
-                alt="Auntie Ann"
-                width={300}
-                height={400}
-                className="w-full h-auto max-w-sm lg:max-w-md"
-              />
-            </div>
+    <section className="relative min-h-screen bg-linear-to-br from-meadow-1 via-meadow-2 to-meadow-3 py-16 overflow-hidden">
+      <div className="relative max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+        {/* Story Card */}
+        <div className="relative col-span-1 md:col-span-2p-6">
+          <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-2">
+            Meet Auntie Ann.
+          </h3>
+          <p className="text-lg text-white/85 leading-relaxed max-w-3xl">
+            She is a chronic kidney disease patient, addicted to salt. Every
+            bland meal feels like a punishment, turning her medical diet into a
+            daily battle.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3 text-sm">
+            <span className="px-3 py-1 rounded-full bg-white/20 border border-white/30 text-white">
+              Hospital diet fatigue
+            </span>
+            <span className="px-3 py-1 rounded-full bg-white/20 border border-white/30 text-white">
+              Craving management
+            </span>
+            <span className="px-3 py-1 rounded-full bg-white/20 border border-white/30 text-white">
+              Quality of life
+            </span>
           </div>
+        </div>
 
-          {/* Center - Problem Statement Content */}
-          <div className="text-center space-y-6">
-            <div className="bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-6">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                Meet
-              </h2>
-              <h3 className="text-4xl lg:text-5xl font-bold text-meadow-3 mb-4">
-                Auntie Ann.
-              </h3>
-              <p className="text-lg lg:text-xl text-white/90 leading-relaxed">
-                70 years old, Chronic Kidney Disease patient. She is strictly
-                addicted to salt, making her medical diet a daily struggle.
-              </p>
-            </div>
-
-            {/* Prominent Problem Statement */}
-            <div className="bg-meadow-3 border-4 border-white rounded-2xl p-6 transform rotate-1 hover:rotate-0 transition-transform duration-300">
-              <h3 className="text-2xl lg:text-3xl font-bold text-white">
-                Where is my SALTY Food !!!
-              </h3>
-            </div>
-
-            {/* Problem Statistics */}
-            <div className="bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-6">
-              <p className="text-xl lg:text-2xl font-bold text-white mb-4">
-                7/10 patients lose their appetite because of bland hospital
-                food.
-              </p>
-
-              <div className="space-y-4">
-                <div className="text-center">
-                  <div className="text-3xl lg:text-4xl font-bold text-meadow-3">
-                    2,000mg
-                  </div>
-                  <div className="text-lg text-white/90">
-                    Sodium Daily Limit
-                  </div>
-                </div>
+        <div className="grid relative grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+          {/* Stat: 7/10 patients */}
+          <div className="relative bg-white/12 border border-white/20 rounded-3xl p-5 backdrop-blur-lg">
+            <p className="text-xl text-white/90 leading-relaxed">
+              7/10 Patients lose their appetite because of bland hospital food.
+            </p>
+            <div className="mt-6 flex items-center gap-3">
+              <div className="text-sm text-white/80">
+                Taste fatigue leads to poor nutrition and recovery.
               </div>
             </div>
           </div>
 
-          {/* Right Side - Salty Food Image */}
-          <div className="flex justify-center lg:justify-start">
-            <div className="relative">
-              <Image
-                src="/static/Elements/Introduce/High-Sodium-Food.png"
-                alt="High Sodium Food"
-                width={300}
-                height={400}
-                className="w-full h-auto max-w-sm lg:max-w-md"
-              />
+          {/* Sodium Limit */}
+          <div className="relative bg-white/12 border border-white/20 rounded-3xl p-5 backdrop-blur-lg  ">
+            <p className="text-xl text-white/90 leading-relaxed">
+              2,000 mg Sodium Daily Limit for high-risk patients.
+            </p>
+            <div className="mt-6 flex flex-col gap-2 text-sm text-white/75">
+              <span>Low-sodium diets can feel restrictive.</span>
+              <span>Cravings spike adherence challenges.</span>
             </div>
           </div>
-        </div>
 
-        {/* Target Conditions Section */}
-        <div className="mt-12 text-center">
-          <div className="bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-6 max-w-4xl mx-auto">
-            <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+          {/* Target Conditions */}
+          <div className="relative col-span-1 md:col-span-2 lg:col-span-3 bg-white/10 border border-white/20 rounded-3xl p-6 backdrop-blur-lg">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
               Target Conditions
             </h3>
-            <div className="text-lg lg:text-xl text-white/90">
+            <p className="text-lg text-white/85">
               Severe Heart Failure, Cirrhosis, Nephrotic Syndrome & Uncontrolled
               HTN.
-            </div>
+            </p>
           </div>
+        </div>
+        {/* Introduce Image */}
+        <div className="absolute -top-5 right-5 overflow-hidden hidden lg:block">
+          <Image
+            src="/static/Elements/Introduce/Introduce.png"
+            alt="Introduction"
+            width={400}
+            height={300}
+            className="h-auto w-96 rounded-2xl"
+          />
         </div>
       </div>
     </section>

@@ -1,13 +1,13 @@
-import React from 'react';
-import Image from 'next/image';
-import { Step1BasicInfo } from './steps/Step1BasicInfo';
-import { Step2Address } from './steps/Step2Address';
-import { Step3ProductSelection } from './steps/Step3ProductSelection';
-import { Step4HealthInfo } from './steps/Step4HealthInfo';
-import { Step5Consent } from './steps/Step5Consent';
-import { useExperimentForm } from './useExperimentForm';
-import { formatFormDataForSubmission, scrollToTop } from './utils';
-import { FormData } from './types';
+import React from "react";
+import Image from "next/image";
+import { Step1BasicInfo } from "./steps/Step1BasicInfo";
+import { Step2Address } from "./steps/Step2Address";
+import { Step3ProductSelection } from "./steps/Step3ProductSelection";
+import { Step4HealthInfo } from "./steps/Step4HealthInfo";
+import { Step5Consent } from "./steps/Step5Consent";
+import { useExperimentForm } from "./useExperimentForm";
+import { formatFormDataForSubmission, scrollToTop } from "./utils";
+import { FormData } from "./types";
 
 const ExperimentForm: React.FC = () => {
   const {
@@ -28,13 +28,13 @@ const ExperimentForm: React.FC = () => {
   const onSubmit = async (data: FormData) => {
     // Format data for submission
     const submissionData = formatFormDataForSubmission(data);
-    
+
     // Log the data (in real app, this would be sent to an API)
-    console.log('Form submitted:', submissionData);
-    
+    console.log("Form submitted:", submissionData);
+
     // Show success message
-    alert('Form submitted successfully! We will contact you soon.');
-    
+    alert("Form submitted successfully! We will contact you soon.");
+
     // You could redirect or show a success page here
     // router.push('/success');
   };
@@ -61,7 +61,9 @@ const ExperimentForm: React.FC = () => {
       <div className="min-h-screen bg-linear-to-br from-meadow-1 via-meadow-2 to-meadow-3 flex items-center justify-center">
         <div className="text-center text-white">
           <h1 className="text-4xl font-bold mb-4">Thank You!</h1>
-          <p className="text-xl">Your application has been submitted successfully.</p>
+          <p className="text-xl">
+            Your application has been submitted successfully.
+          </p>
           <p className="text-lg mt-2">We will contact you soon.</p>
         </div>
       </div>
@@ -167,7 +169,9 @@ const ExperimentForm: React.FC = () => {
             {/* Error Summary */}
             {Object.keys(errors).length > 0 && (
               <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-                <h3 className="text-red-800 font-medium mb-2">Please correct the following errors:</h3>
+                <h3 className="text-red-800 font-medium mb-2">
+                  Please correct the following errors:
+                </h3>
                 <ul className="text-red-700 text-sm space-y-1">
                   {Object.entries(errors).map(([field, error]) => (
                     <li key={field}>• {error}</li>
@@ -209,7 +213,7 @@ const ExperimentForm: React.FC = () => {
                   className="bg-meadow-3 hover:bg-meadow-2 text-white px-6 py-3 rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   aria-label="Submit form"
                 >
-                  {isSubmitting ? 'Submitting...' : 'Submit Application'}
+                  {isSubmitting ? "Submitting..." : "Submit Application"}
                 </button>
               )}
             </div>

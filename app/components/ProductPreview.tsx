@@ -10,19 +10,20 @@ export default function ProductPreview() {
             Product Variants
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Specialized solutions designed to enhance flavor perception through cross-modal sensory triggers
+            Specialized solutions designed to enhance flavor perception through
+            cross-modal sensory triggers
           </p>
         </div>
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {/* Beef Odor Variant */}
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div className="overflow-hidden duration-300">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 md:p-8">
               {/* Product Images */}
-              <div className="flex flex-col items-center justify-center space-y-4">
+              <div className="flex flex-col items-center justify-center">
                 <div className="relative">
-                  <div className="absolute -top-3 -right-3 bg-meadow-3 text-white text-sm font-bold px-3 py-1 rounded-full">
+                  <div className="absolute -top-3 -right-3 bg-meadow-3 text-white text-sm font-bold px-3 py-1 rounded-full z-10">
                     1.5x Impulse
                   </div>
                   <Image
@@ -30,24 +31,18 @@ export default function ProductPreview() {
                     alt="Beef Odor Product"
                     width={300}
                     height={400}
-                    className="w-full h-auto max-w-xs mx-auto object-contain"
+                    className="w-full h-auto max-w-36 mx-auto object-contain"
                   />
-                </div>
-                <div className="flex space-x-2">
-                  <Image
-                    src="/static/Elements/Solution/meat_sticker.png"
-                    alt="Meat Sticker"
-                    width={60}
-                    height={60}
-                    className="w-12 h-12 object-contain"
-                  />
-                  <Image
-                    src="/static/Elements/Solution/sticker_preview.png"
-                    alt="Sticker Preview"
-                    width={60}
-                    height={60}
-                    className="w-12 h-12 object-contain"
-                  />
+                  {/* Sticker positioned absolutely at bottom left with overlap */}
+                  <div className="absolute bottom-[20] left-[-80] transform translate-y-1/2 z-20">
+                    <Image
+                      src="/static/Elements/Solution/meat_sticker.png"
+                      alt="Meat Sticker"
+                      width={120}
+                      height={120}
+                      className="w-36 h-36 object-contain"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -57,9 +52,10 @@ export default function ProductPreview() {
                   Beef Odor
                 </h3>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  Beef odor can induce saltiness perception through cross-modal sensory triggers. 
-                  Specifically designed to enhance the flavor profile of main protein dishes, it 
-                  offers a breakthrough solution for patients on sodium-restricted diets.
+                  Beef odor can induce saltiness perception through cross-modal
+                  sensory triggers. Specifically designed to enhance the flavor
+                  profile of main protein dishes, it offers a breakthrough
+                  solution for patients on sodium-restricted diets.
                 </p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-center text-gray-700">
@@ -79,12 +75,12 @@ export default function ProductPreview() {
           </div>
 
           {/* Sea Breeze Variant */}
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div className="overflow-hidden duration-300">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 md:p-8">
               {/* Product Images */}
-              <div className="flex flex-col items-center justify-center space-y-4">
+              <div className="flex flex-col items-center justify-center">
                 <div className="relative">
-                  <div className="absolute -top-3 -right-3 bg-meadow-3 text-white text-sm font-bold px-3 py-1 rounded-full">
+                  <div className="absolute -top-3 -right-3 bg-meadow-3 text-white text-sm font-bold px-3 py-1 rounded-full z-10">
                     1.2x Impulse
                   </div>
                   <Image
@@ -92,24 +88,18 @@ export default function ProductPreview() {
                     alt="Sea Breeze Product"
                     width={300}
                     height={400}
-                    className="w-full h-auto max-w-xs mx-auto object-contain"
+                    className="w-full h-auto max-w-36 mx-auto object-contain"
                   />
-                </div>
-                <div className="flex space-x-2">
-                  <Image
-                    src="/static/Elements/Solution/fish_sticker.png"
-                    alt="Fish Sticker"
-                    width={60}
-                    height={60}
-                    className="w-12 h-12 object-contain"
-                  />
-                  <Image
-                    src="/static/Elements/Solution/Sachet_preview.png"
-                    alt="Sachet Preview"
-                    width={60}
-                    height={60}
-                    className="w-12 h-12 object-contain"
-                  />
+                  {/* Sticker positioned absolutely at bottom left with overlap */}
+                  <div className="absolute bottom-[20] left-[-80] transform translate-y-1/2 z-20">
+                    <Image
+                      src="/static/Elements/Solution/fish_sticker.png"
+                      alt="Fish Sticker"
+                      width={120}
+                      height={120}
+                      className="w-36 h-36 object-contain"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -119,8 +109,10 @@ export default function ProductPreview() {
                   Sea Breeze
                 </h3>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  Sea Breeze enhances the dining environment by providing a refreshing oceanic aroma, 
-                  helping to alleviate the stress of bland meals and increasing satisfaction among elderly patients.
+                  Sea Breeze enhances the dining environment by providing a
+                  refreshing oceanic aroma, helping to alleviate the stress of
+                  bland meals and increasing satisfaction among elderly
+                  patients.
                 </p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-center text-gray-700">
@@ -148,7 +140,7 @@ export default function ProductPreview() {
               alt="Bowl with Sticker"
               width={200}
               height={200}
-              className="w-full h-auto max-w-37.5 mx-auto mb-3 object-contain"
+              className="w-full h-36 mx-auto mb-3 object-contain"
             />
             <p className="text-sm text-gray-600">Easy Application</p>
           </div>
@@ -158,7 +150,7 @@ export default function ProductPreview() {
               alt="Meat Box"
               width={200}
               height={200}
-              className="w-full h-auto max-w-37.5 mx-auto mb-3 object-contain"
+              className="w-full h-36 mx-auto mb-3 object-contain"
             />
             <p className="text-sm text-gray-600">Protein Solutions</p>
           </div>
@@ -168,7 +160,7 @@ export default function ProductPreview() {
               alt="Fish Box"
               width={200}
               height={200}
-              className="w-full h-auto max-w-37.5 mx-auto mb-3 object-contain"
+              className="w-full h-36 mx-auto mb-3 object-contain"
             />
             <p className="text-sm text-gray-600">Seafood Options</p>
           </div>
@@ -178,7 +170,7 @@ export default function ProductPreview() {
               alt="Sachet"
               width={200}
               height={200}
-              className="w-full h-auto max-w-37.5 mx-auto mb-3 object-contain"
+              className="w-full h-36 mx-auto mb-3 object-contain"
             />
             <p className="text-sm text-gray-600">Portable Format</p>
           </div>
