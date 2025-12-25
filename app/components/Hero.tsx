@@ -1,6 +1,14 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
+  const router = useRouter();
+
+  const handleTryItOut = () => {
+    router.push("/experiment");
+  };
   return (
     <section className="h-[80vh] flex items-center justify-center bg-linear-to-br from-meadow-1 via-meadow-2 to-meadow-3 overflow-hidden">
       {/* Background Pattern */}
@@ -46,7 +54,10 @@ export default function Hero() {
               Designing environments that prioritize patient joy without
               compromising health.
             </p>
-            <button className="capitalize bg-meadow-3 hover:cursor-pointer hover:border-white border-meadow-3 border-2 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg text-sm sm:text-base lg:text-lg font-bold transition-all duration-100 transform">
+            <button 
+              onClick={handleTryItOut}
+              className="capitalize bg-meadow-3 hover:cursor-pointer hover:border-white border-meadow-3 border-2 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg text-sm sm:text-base lg:text-lg font-bold transition-all duration-100 transform"
+            >
               Try it out !
             </button>
           </div>
