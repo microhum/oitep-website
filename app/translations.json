@@ -4,13 +4,23 @@
     "teams": "Our Teams",
     "products": "Our Products",
     "contact": "Contact Us",
-    "createPlan": "Create Your Personal Plan"
+    "createPlan": "Create Your Personal Plan",
+    "hero": {
+      "reduceSaltCraving": "Reduce Your Salt Craving With",
+      "designingEnvironments": "Designing environments that prioritize patient joy without compromising health.",
+      "createPersonalPlan": "Create Your Personal Plan"
+    }
   },
   "th": {
     "about": "เกี่ยวกับเรา",
     "teams": "ทีมของเรา",
     "products": "ผลิตภัณฑ์ของเรา",
     "contact": "ติดต่อเรา",
-    "createPlan": "สร้างแผนส่วนตัวของคุณ"
+    "createPlan": "สร้างแผนส่วนตัวของคุณ",
+    "hero": {
+      "reduceSaltCraving": "ลดความอยากเค็มของคุณด้วย",
+      "designingEnvironments": "ออกแบบสภาพแวดล้อมที่ให้ความสำคัญกับความสุขของผู้ป่วยโดยไม่กระทบต่อสุขภาพ",
+      "createPersonalPlan": "สร้างแผนส่วนตัวของคุณ"
+    }
   }
 }

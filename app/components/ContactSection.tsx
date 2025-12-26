@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useLocale } from "./LocaleProvider";
 
 export default function ContactSection() {
+  const { translations } = useLocale();
   const [formData, setFormData] = useState({
     email: "",
     subject: "",
@@ -56,12 +58,10 @@ ${formData.subject}
           fullName: "",
           company: "",
         });
-        setSubmitMessage(
-          "Thank you for your message! We'll get back to you soon."
-        );
+        setSubmitMessage(translations.contactSection.thankYou);
       }, 1000);
     } catch (error) {
-      setSubmitMessage("Error sending message. Please try again.");
+      setSubmitMessage(translations.contactSection.errorMessage);
     } finally {
       setIsSubmitting(false);
     }
@@ -74,17 +74,6 @@ ${formData.subject}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Get in Touch
-              </h2>
-              <p className="text-gray-600 mb-8">
-                We&#39;re here to answer any questions you might have about our
-                products, research, or partnership opportunities. Reach out to
-                us and we&#39;ll respond as soon as possible.
-              </p>
-            </div>
-
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
                 <div className="shrink-0">
@@ -93,9 +82,9 @@ ${formData.subject}
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Phone</h3>
-                  <p className="text-gray-600">0889945445</p>
-                  <p className="text-gray-500 text-sm">Mon-Fri 9AM-6PM ICT</p>
+                  <h3 className="text-lg font-semibold text-gray-900">{translations.contactSection.phone}</h3>
+                  <p className="text-gray-600">{translations.contactSection.phoneNumber}</p>
+                  <p className="text-gray-500 text-sm">{translations.contactSection.phoneHours}</p>
                 </div>
               </div>
 
@@ -106,10 +95,10 @@ ${formData.subject}
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Email</h3>
-                  <p className="text-gray-600">hofahoff@gmail.com</p>
+                  <h3 className="text-lg font-semibold text-gray-900">{translations.contactSection.email}</h3>
+                  <p className="text-gray-600">{translations.contactSection.emailAddress}</p>
                   <p className="text-gray-500 text-sm">
-                    We&apos;ll respond within 24 hours
+                    {translations.contactSection.emailResponse}
                   </p>
                 </div>
               </div>
@@ -122,11 +111,11 @@ ${formData.subject}
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">
-                    Location
+                    {translations.contactSection.location}
                   </h3>
-                  <p className="text-gray-600">Bangkok, Thailand</p>
+                  <p className="text-gray-600">{translations.contactSection.locationAddress}</p>
                   <p className="text-gray-500 text-sm">
-                    Available for virtual meetings worldwide
+                    {translations.contactSection.locationVirtual}
                   </p>
                 </div>
               </div>
@@ -135,13 +124,10 @@ ${formData.subject}
             {/* Company Info */}
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                About OITEP
+                {translations.contactSection.aboutOitep}
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                OITEP is pioneering breakthrough solutions for patients on
-                sodium-restricted diets through cross-modal sensory triggers.
-                Our innovative approach helps reduce salt cravings while
-                maintaining food satisfaction.
+                {translations.contactSection.aboutOitepDescription}
               </p>
             </div>
           </div>
@@ -149,7 +135,7 @@ ${formData.subject}
           {/* Contact Form */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Send us a Message
+              {translations.contactSection.sendMessage}
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -158,7 +144,7 @@ ${formData.subject}
                   htmlFor="fullName"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Full Name of Contact Person
+                  {translations.contactSection.fullName}
                 </label>
                 <input
                   type="text"
@@ -177,7 +163,7 @@ ${formData.subject}
                   htmlFor="email"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Email *
+                  {translations.contactSection.emailLabel}
                 </label>
                 <input
                   type="email"
@@ -196,7 +182,7 @@ ${formData.subject}
                   htmlFor="company"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Agency / Company
+                  {translations.contactSection.company}
                 </label>
                 <input
                   type="text"
@@ -214,7 +200,7 @@ ${formData.subject}
                   htmlFor="subject"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Content to Inquire About *
+                  {translations.contactSection.content}
                 </label>
                 <textarea
                   id="subject"
@@ -224,7 +210,7 @@ ${formData.subject}
                   required
                   rows={5}
                   className="text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-meadow-2 focus:border-meadow-2 outline-none transition-colors resize-none"
-                  placeholder="Tell us about your inquiry..."
+                  placeholder={translations.contactSection.contentPlaceholder}
                 />
               </div>
 
@@ -236,12 +222,12 @@ ${formData.subject}
                 {isSubmitting ? (
                   <>
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                    <span>Sending...</span>
+                    <span>{translations.contactSection.sending}</span>
                   </>
                 ) : (
                   <>
                     <Send className="h-5 w-5" />
-                    <span>Send Message</span>
+                    <span>{translations.contactSection.sendMessageBtn}</span>
                   </>
                 )}
               </button>

@@ -1,11 +1,15 @@
+"use client";
+
 import Image from "next/image";
+import { useLocale } from "./LocaleProvider";
 
 export default function Awards() {
+  const { translations } = useLocale();
   return (
     <section className="h-[20vh] min-h-30 bg-white border-2 border-white flex items-center">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 w-full">
         <h2 className="text-center text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-gray-700 mb-2 md:mb-4">
-          Our Partners
+          {translations.awards.ourPartners}
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-3 lg:gap-4 xl:gap-6 items-center">
           <div className="flex items-center justify-center grayscale hover:grayscale-0 opacity-30 hover:opacity-50 transition-opacity duration-300 p-2 md:p-3">
