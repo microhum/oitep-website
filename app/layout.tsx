@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Kanit } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
-const inter = Inter({
-  variable: "--font-inter",
+const font = Kanit({
+  variable: "--font-kanit",
+  weight: "200",
   subsets: ["latin"],
 });
 
@@ -86,7 +87,7 @@ export default function RootLayout({
       <head>
         <meta name="apple-mobile-web-app-title" content="MyWebSite" />
       </head>
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${font.variable} antialiased`}>
         <Navbar />
         {children}
       </body>

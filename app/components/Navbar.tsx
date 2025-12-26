@@ -3,11 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Languages } from "lucide-react";
+import translations from "../translations.json";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState<"en" | "th">("en");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +51,7 @@ export default function Navbar() {
                     : "border-transparent text-white hover:text-gray-200"
                 }`}
               >
-                About Us
+                {translations[currentLanguage].about}
               </a>
               <Link
                 href="/teams"
@@ -59,7 +61,7 @@ export default function Navbar() {
                     : "border-transparent text-white hover:text-gray-200"
                 }`}
               >
-                Our Teams
+                {translations[currentLanguage].teams}
               </Link>
               <a
                 href="#products"
@@ -69,7 +71,7 @@ export default function Navbar() {
                     : "border-transparent text-white hover:text-gray-200"
                 }`}
               >
-                Our Products
+                {translations[currentLanguage].products}
               </a>
               <a
                 href="#contact"
@@ -79,13 +81,27 @@ export default function Navbar() {
                     : "border-transparent text-white hover:text-gray-200"
                 }`}
               >
-                Contact Us
+                {translations[currentLanguage].contact}
               </a>
             </div>
           </div>
-          <div className="hidden sm:ml-6 sm:flex sm:items-center">
+          <div className="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-4">
             <button className="bg-meadow-3 hover:cursor-pointer hover:border-white border-meadow-3 border-2 text-white px-4 py-1 rounded-lg text-md font-semibold transition-all duration-100 transform">
-              Create Your Personal Plan
+              {translations[currentLanguage].createPlan}
+            </button>
+            <button
+              onClick={() =>
+                setCurrentLanguage(currentLanguage === "en" ? "th" : "en")
+              }
+              className={`inline-flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                isScrolled
+                  ? "text-gray-500 hover:text-gray-700 hover:bg-gray-50"
+                  : "text-white hover:text-gray-200 hover:bg-opacity-10"
+              }`}
+              aria-label="Toggle language"
+            >
+              <Languages className="h-4 w-4 mr-2" />
+              {currentLanguage === "en" ? "TH" : "EN"}
             </button>
           </div>
           <div className="-mr-2 flex items-center sm:hidden">
@@ -116,31 +132,31 @@ export default function Navbar() {
             href="#about"
             className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
           >
-            About Us
+            {translations[currentLanguage].about}
           </a>
           <Link
             href="/teams"
             className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
           >
-            Our Teams
+            {translations[currentLanguage].teams}
           </Link>
           <a
             href="#products"
             className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
           >
-            Our Products
+            {translations[currentLanguage].products}
           </a>
           <a
             href="#contact"
             className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
           >
-            Contact Us
+            {translations[currentLanguage].contact}
           </a>
         </div>
         <div className="pt-4 pb-3 border-t border-gray-200">
           <div className="flex items-center px-4">
             <button className="bg-meadow-3 hover:bg-meadow-2 text-white px-4 py-2 rounded-md text-sm font-medium w-full transition-colors">
-              Create Your Personal Plan
+              {translations[currentLanguage].createPlan}
             </button>
           </div>
         </div>

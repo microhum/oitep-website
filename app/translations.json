@@ -1,0 +1,16 @@
+{
+  "en": {
+    "about": "About Us",
+    "teams": "Our Teams",
+    "products": "Our Products",
+    "contact": "Contact Us",
+    "createPlan": "Create Your Personal Plan"
+  },
+  "th": {
+    "about": "เกี่ยวกับเรา",
+    "teams": "ทีมของเรา",
+    "products": "ผลิตภัณฑ์ของเรา",
+    "contact": "ติดต่อเรา",
+    "createPlan": "สร้างแผนส่วนตัวของคุณ"
+  }
+}
