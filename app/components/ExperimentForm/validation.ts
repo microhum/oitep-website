@@ -32,48 +32,49 @@ export const validateStep = (step: number, formData: FormData): FormErrors => {
       if (!formData.ageGroup) {
         errors.ageGroup = 'Age group is required';
       }
+      // occupation is optional
       break;
 
     case 2:
-      // Address
-      if (!formData.streetAddress.trim()) {
-        errors.streetAddress = 'Street address is required';
+      // Current Salt Habits
+      if (!formData.dailySaltIntake) {
+        errors.dailySaltIntake = 'Please estimate your daily salt intake';
       }
-      if (!formData.city.trim()) {
-        errors.city = 'City is required';
+      if (!formData.mainSaltSources || formData.mainSaltSources.length === 0) {
+        errors.mainSaltSources = 'Please select at least one main source of salt';
       }
-      if (!formData.state.trim()) {
-        errors.state = 'State is required';
+      if (!formData.eatingOutFrequency) {
+        errors.eatingOutFrequency = 'Please select your eating out frequency';
       }
-      if (!formData.zipCode.trim()) {
-        errors.zipCode = 'ZIP code is required';
-      }
-      if (!formData.country.trim()) {
-        errors.country = 'Country is required';
+      if (!formData.processedFoodFrequency) {
+        errors.processedFoodFrequency = 'Please select your processed food consumption frequency';
       }
       break;
 
     case 3:
-      // Product Selection
-      if (!formData.productVariant) {
-        errors.productVariant = 'Product selection is required';
-      }
-      if (!formData.quantity) {
-        errors.quantity = 'Quantity is required';
-      }
-      if (!formData.primaryUse) {
-        errors.primaryUse = 'Primary use is required';
-      }
+      // Health & Goals (all fields optional for this step)
       break;
 
     case 4:
-      // Health Information (all fields optional)
+      // Preferences & Lifestyle
+      if (!formData.tastePreferences || formData.tastePreferences.length === 0) {
+        errors.tastePreferences = 'Please select at least one taste preference';
+      }
+      if (!formData.cookingFrequency) {
+        errors.cookingFrequency = 'Please select your cooking frequency';
+      }
+      if (!formData.familySize) {
+        errors.familySize = 'Please select your family size';
+      }
+      if (!formData.budgetRange) {
+        errors.budgetRange = 'Please select your budget range';
+      }
       break;
 
     case 5:
-      // Consent
-      if (!formData.researchConsent) {
-        errors.researchConsent = 'Research consent is required';
+      // Consent & Planning
+      if (!formData.dataCollectionConsent) {
+        errors.dataCollectionConsent = 'Data collection consent is required';
       }
       if (!formData.termsAgreement) {
         errors.termsAgreement = 'Terms agreement is required';
@@ -81,6 +82,7 @@ export const validateStep = (step: number, formData: FormData): FormErrors => {
       if (!formData.privacyPolicy) {
         errors.privacyPolicy = 'Privacy policy agreement is required';
       }
+      // personalizedTipsConsent is optional
       break;
   }
 

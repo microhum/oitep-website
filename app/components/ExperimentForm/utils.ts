@@ -5,31 +5,31 @@ export const STEP_CONFIGS: StepConfig[] = [
     id: 1,
     title: 'Basic Information',
     description: 'Tell us about yourself',
-    fields: ['fullName', 'email', 'phone', 'ageGroup', 'facilityName'],
+    fields: ['fullName', 'email', 'phone', 'ageGroup', 'occupation'],
   },
   {
     id: 2,
-    title: 'Shipping Address',
-    description: 'Where should we send your products?',
-    fields: ['streetAddress', 'city', 'state', 'zipCode', 'country'],
+    title: 'Current Salt Habits',
+    description: 'Help us understand your current salt intake',
+    fields: ['dailySaltIntake', 'mainSaltSources', 'eatingOutFrequency', 'processedFoodFrequency'],
   },
   {
     id: 3,
-    title: 'Product Selection',
-    description: 'Choose your preferred products',
-    fields: ['productVariant', 'quantity', 'primaryUse'],
+    title: 'Health & Goals',
+    description: 'Your health concerns and salt reduction goals',
+    fields: ['healthConditions', 'sodiumRestriction', 'weightGoal', 'saltReductionGoal'],
   },
   {
     id: 4,
-    title: 'Health Information',
-    description: 'Help us understand your needs',
-    fields: ['dietaryRestrictions', 'sodiumRestriction', 'medicalConditions'],
+    title: 'Preferences & Lifestyle',
+    description: 'Your taste preferences and daily habits',
+    fields: ['tastePreferences', 'cookingFrequency', 'familySize', 'budgetRange'],
   },
   {
     id: 5,
-    title: 'Consent & Agreement',
+    title: 'Consent & Planning',
     description: 'Review and agree to terms',
-    fields: ['researchConsent', 'followUpConsent', 'termsAgreement', 'privacyPolicy'],
+    fields: ['dataCollectionConsent', 'personalizedTipsConsent', 'termsAgreement', 'privacyPolicy'],
   },
 ];
 
@@ -81,6 +81,89 @@ export const SODIUM_RESTRICTION_OPTIONS = [
   { value: 'unsure', label: 'Not sure' },
 ];
 
+export const DAILY_SALT_INTAKE_OPTIONS = [
+  { value: 'under-2000', label: 'Under 2000mg/day' },
+  { value: '2000-3000', label: '2000-3000mg/day' },
+  { value: '3000-4000', label: '3000-4000mg/day' },
+  { value: '4000-5000', label: '4000-5000mg/day' },
+  { value: 'over-5000', label: 'Over 5000mg/day' },
+  { value: 'unsure', label: 'Not sure' },
+];
+
+export const MAIN_SALT_SOURCES_OPTIONS = [
+  { value: 'processed-foods', label: 'Processed foods (canned, packaged)' },
+  { value: 'restaurant-food', label: 'Restaurant/fast food' },
+  { value: 'cooking-salt', label: 'Salt added during cooking' },
+  { value: 'table-salt', label: 'Table salt at meals' },
+  { value: 'snacks', label: 'Salty snacks (chips, nuts)' },
+  { value: 'condiments', label: 'Condiments (soy sauce, ketchup)' },
+  { value: 'bread-bakery', label: 'Bread and bakery items' },
+  { value: 'cheese-dairy', label: 'Cheese and dairy products' },
+];
+
+export const EATING_OUT_FREQUENCY_OPTIONS = [
+  { value: 'never', label: 'Never' },
+  { value: 'rarely', label: 'Rarely (1-2 times/month)' },
+  { value: 'sometimes', label: 'Sometimes (1-2 times/week)' },
+  { value: 'often', label: 'Often (3-4 times/week)' },
+  { value: 'daily', label: 'Daily or almost daily' },
+];
+
+export const PROCESSED_FOOD_FREQUENCY_OPTIONS = [
+  { value: 'never', label: 'Never' },
+  { value: 'rarely', label: 'Rarely' },
+  { value: 'sometimes', label: 'Sometimes' },
+  { value: 'often', label: 'Often' },
+  { value: 'daily', label: 'Daily' },
+];
+
+export const WEIGHT_GOAL_OPTIONS = [
+  { value: 'maintain', label: 'Maintain current weight' },
+  { value: 'lose', label: 'Lose weight' },
+  { value: 'gain', label: 'Gain weight' },
+  { value: 'not-applicable', label: 'Not applicable' },
+];
+
+export const SALT_REDUCTION_GOAL_OPTIONS = [
+  { value: 'none', label: 'No reduction needed' },
+  { value: 'mild', label: 'Mild reduction (10-20%)' },
+  { value: 'moderate', label: 'Moderate reduction (20-50%)' },
+  { value: 'significant', label: 'Significant reduction (50%+)' },
+  { value: 'unsure', label: 'Not sure yet' },
+];
+
+export const TASTE_PREFERENCES_OPTIONS = [
+  { value: 'salty', label: 'Very salty foods' },
+  { value: 'mild', label: 'Mildly seasoned' },
+  { value: 'spicy', label: 'Spicy flavors' },
+  { value: 'herbs', label: 'Herb-based seasonings' },
+  { value: 'citrus', label: 'Citrus/acid flavors' },
+  { value: 'umami', label: 'Umami-rich foods' },
+  { value: 'bland', label: 'Bland/simple flavors' },
+];
+
+export const COOKING_FREQUENCY_OPTIONS = [
+  { value: 'never', label: 'Never cook' },
+  { value: 'rarely', label: 'Rarely (1-2 times/week)' },
+  { value: 'sometimes', label: 'Sometimes (3-4 times/week)' },
+  { value: 'often', label: 'Often (5-6 times/week)' },
+  { value: 'daily', label: 'Daily' },
+];
+
+export const FAMILY_SIZE_OPTIONS = [
+  { value: 'single', label: 'Single person' },
+  { value: 'couple', label: 'Couple' },
+  { value: 'small-family', label: 'Small family (3-4 people)' },
+  { value: 'large-family', label: 'Large family (5+ people)' },
+];
+
+export const BUDGET_RANGE_OPTIONS = [
+  { value: 'low', label: 'Budget conscious (<$50/month)' },
+  { value: 'medium', label: '$50-100/month' },
+  { value: 'high', label: '$100-200/month' },
+  { value: 'premium', label: '$200+/month' },
+];
+
 export const getStepProgress = (currentStep: number, totalSteps: number): number => {
   return Math.round((currentStep / totalSteps) * 100);
 };
@@ -100,20 +183,21 @@ export const createInitialFormData = () => ({
   email: '',
   phone: '',
   ageGroup: '',
-  facilityName: '',
-  streetAddress: '',
-  city: '',
-  state: '',
-  zipCode: '',
-  country: '',
-  productVariant: '',
-  quantity: '',
-  primaryUse: '',
-  dietaryRestrictions: '',
+  occupation: '',
+  dailySaltIntake: '',
+  mainSaltSources: [],
+  eatingOutFrequency: '',
+  processedFoodFrequency: '',
+  healthConditions: '',
   sodiumRestriction: '',
-  medicalConditions: '',
-  researchConsent: false,
-  followUpConsent: false,
+  weightGoal: '',
+  saltReductionGoal: '',
+  tastePreferences: [],
+  cookingFrequency: '',
+  familySize: '',
+  budgetRange: '',
+  dataCollectionConsent: false,
+  personalizedTipsConsent: false,
   termsAgreement: false,
   privacyPolicy: false,
 });

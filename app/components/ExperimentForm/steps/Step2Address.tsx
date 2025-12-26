@@ -1,12 +1,19 @@
 import React from 'react';
 import {
-  InputField,
+  SelectField,
+  CheckboxField,
 } from '../FormFields';
 import { FormData, FormErrors } from '../types';
+import {
+  DAILY_SALT_INTAKE_OPTIONS,
+  MAIN_SALT_SOURCES_OPTIONS,
+  EATING_OUT_FREQUENCY_OPTIONS,
+  PROCESSED_FOOD_FREQUENCY_OPTIONS
+} from '../utils';
 
 interface Step2AddressProps {
   formData: FormData;
-  onChange: (field: keyof FormData, value: string) => void;
+  onChange: (field: keyof FormData, value: string | string[]) => void;
   errors: FormErrors;
 }
 
@@ -15,69 +22,66 @@ export const Step2Address: React.FC<Step2AddressProps> = ({
   onChange,
   errors,
 }) => {
+  const handleSaltSourceChange = (source: string, checked: boolean) => {
+    const currentSources = formData.mainSaltSources || [];
+    const newSources = checked
+      ? [...currentSources, source]
+      : currentSources.filter(s => s !== source);
+    onChange('mainSaltSources', newSources);
+  };
+
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">
-        Shipping Address
+        Current Salt Habits
       </h2>
+      <p className="text-gray-800 mb-6">
+        Help us understand your current salt intake patterns and habits.
+      </p>
 
-      <div>
-        <InputField
-          label="Street Address"
-          required
-          type="text"
-          value={formData.streetAddress}
-          onChange={(value) => onChange('streetAddress', value)}
-          placeholder="123 Main Street"
-          error={errors.streetAddress}
-          className="w-full"
-        />
+      <SelectField
+        label="Estimated Daily Salt Intake"
+        value={formData.dailySaltIntake}
+        onChange={(value) => onChange('dailySaltIntake', value)}
+        options={DAILY_SALT_INTAKE_OPTIONS}
+        placeholder="Select your estimated daily intake"
+      />
+
+      <div className="space-y-3">
+        <label className="block text-sm font-medium text-gray-900">
+          Main Sources of Salt in Your Diet
+        </label>
+        <p className="text-sm text-gray-600 mb-3">Select all that apply</p>
+        <div className="space-y-2">
+          {MAIN_SALT_SOURCES_OPTIONS.map((option) => (
+            <CheckboxField
+              key={option.value}
+              checked={(formData.mainSaltSources || []).includes(option.value)}
+              onChange={(checked) => handleSaltSourceChange(option.value, checked)}
+              className="mb-2"
+            >
+              {option.label}
+            </CheckboxField>
+          ))}
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <InputField
-          label="City"
-          required
-          type="text"
-          value={formData.city}
-          onChange={(value) => onChange('city', value)}
-          placeholder="New York"
-          error={errors.city}
-        />
+      <SelectField
+        label="How Often Do You Eat Out or Order Takeout?"
+        value={formData.eatingOutFrequency}
+        onChange={(value) => onChange('eatingOutFrequency', value)}
+        options={EATING_OUT_FREQUENCY_OPTIONS}
+        placeholder="Select frequency"
+      />
 
-        <InputField
-          label="State/Province"
-          required
-          type="text"
-          value={formData.state}
-          onChange={(value) => onChange('state', value)}
-          placeholder="NY"
-          error={errors.state}
-        />
-
-        <InputField
-          label="ZIP/Postal Code"
-          required
-          type="text"
-          value={formData.zipCode}
-          onChange={(value) => onChange('zipCode', value)}
-          placeholder="10001"
-          error={errors.zipCode}
-        />
-      </div>
-
-      <div>
-        <InputField
-          label="Country"
-          required
-          type="text"
-          value={formData.country}
-          onChange={(value) => onChange('country', value)}
-          placeholder="United States"
-          error={errors.country}
-          className="w-full"
-        />
-      </div>
+      <SelectField
+        label="How Often Do You Eat Processed Foods?"
+        value={formData.processedFoodFrequency}
+        onChange={(value) => onChange('processedFoodFrequency', value)}
+        options={PROCESSED_FOOD_FREQUENCY_OPTIONS}
+        placeholder="Select frequency"
+      />
+      <p className="text-sm text-gray-600">Canned, packaged, or ready-to-eat foods</p>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Teams() {
   return (
     <section className="min-h-screen bg-white">
-      <div className=" bg-meadow-2 px-6 py-6 pt-24  text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 md:mb-12">
+      <div className=" bg-linear-to-br from-meadow-1 via-meadow-2 to-meadow-2 px-6 py-6 pt-24  text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 md:mb-12">
         <div className="inline-flex w-full justify-center gap-3">
           <h1>Teams</h1>
         </div>

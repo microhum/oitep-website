@@ -65,11 +65,11 @@ export const Step1BasicInfo: React.FC<Step1BasicInfoProps> = ({
       </div>
 
       <InputField
-        label="Healthcare Facility / Institution (if applicable)"
+        label="Occupation"
         type="text"
-        value={formData.facilityName}
-        onChange={(value) => onChange('facilityName', value)}
-        placeholder="Hospital/Care Facility Name"
+        value={formData.occupation}
+        onChange={(value) => onChange('occupation', value)}
+        placeholder="Your job or profession"
         className="w-full"
       />
     </div>

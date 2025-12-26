@@ -29,14 +29,26 @@ const ExperimentForm: React.FC = () => {
     // Format data for submission
     const submissionData = formatFormDataForSubmission(data);
 
-    // Log the data (in real app, this would be sent to an API)
-    console.log("Form submitted:", submissionData);
+    // Send data to Google Sheets
+    const response = await fetch("/api/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(submissionData),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to submit form data");
+    }
+
+    const result = await response.json();
+    console.log("Form submitted successfully:", result);
 
     // Show success message
-    alert("Form submitted successfully! We will contact you soon.");
-
-    // You could redirect or show a success page here
-    // router.push('/success');
+    alert(
+      "Your personal salt planner has been created! We'll send you personalized recommendations soon."
+    );
   };
 
   const handleNextStep = () => {
@@ -62,9 +74,11 @@ const ExperimentForm: React.FC = () => {
         <div className="text-center text-white">
           <h1 className="text-4xl font-bold mb-4">Thank You!</h1>
           <p className="text-xl">
-            Your application has been submitted successfully.
+            Your personal salt planner has been created successfully.
           </p>
-          <p className="text-lg mt-2">We will contact you soon.</p>
+          <p className="text-lg mt-2">
+            We&apos;ll send you personalized recommendations soon.
+          </p>
         </div>
       </div>
     );
@@ -96,11 +110,11 @@ const ExperimentForm: React.FC = () => {
             />
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Join Our Research Experiment
+            Create Your Personal Salt Planner
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-            Help us advance flavor science for better patient care. Participate
-            in our groundbreaking study on odor-induced taste enhancement.
+            Take control of your salt intake with personalized recommendations.
+            Get a customized plan based on your current habits and health goals.
           </p>
         </div>
 
@@ -211,9 +225,9 @@ const ExperimentForm: React.FC = () => {
                   type="submit"
                   disabled={isSubmitting}
                   className="bg-meadow-3 hover:bg-meadow-2 text-white px-6 py-3 rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                  aria-label="Submit form"
+                  aria-label="Create personal planner"
                 >
-                  {isSubmitting ? "Submitting..." : "Submit Application"}
+                  {isSubmitting ? "Creating..." : "Create My Planner"}
                 </button>
               )}
             </div>

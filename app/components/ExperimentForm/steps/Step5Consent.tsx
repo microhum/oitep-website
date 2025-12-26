@@ -24,35 +24,32 @@ export const Step5Consent: React.FC<Step5ConsentProps> = ({
       <div className="space-y-4">
         <div className="bg-meadow-1/20 border border-meadow-2 rounded-lg p-4">
           <h3 className="font-bold text-lg mb-2">
-            Research Participation
+            Personal Salt Usage Planner
           </h3>
           <p className="text-gray-700 mb-4">
-            By participating in this experiment, you agree to help us
-            advance flavor science research. Your data will be
-            anonymized and used solely for research purposes to
-            improve our products for patients with dietary
-            restrictions.
+            By submitting this form, you&apos;ll receive personalized salt reduction recommendations
+            based on your current habits and goals. Your information helps us create
+            tailored plans to support healthier eating patterns.
           </p>
         </div>
 
         <CheckboxField
-          checked={formData.researchConsent}
-          onChange={(value) => onChange('researchConsent', value)}
-          error={errors.researchConsent}
+          checked={formData.dataCollectionConsent}
+          onChange={(value) => onChange('dataCollectionConsent', value)}
+          error={errors.dataCollectionConsent}
           required
         >
-          I consent to participate in this research experiment and
-          understand that my data will be used for research
-          purposes.
+          I consent to the collection and analysis of my salt usage data
+          to create a personalized reduction plan.
         </CheckboxField>
 
         <CheckboxField
-          checked={formData.followUpConsent}
-          onChange={(value) => onChange('followUpConsent', value)}
-          error={errors.followUpConsent}
+          checked={formData.personalizedTipsConsent}
+          onChange={(value) => onChange('personalizedTipsConsent', value)}
+          error={errors.personalizedTipsConsent}
         >
-          I agree to receive follow-up surveys and communications
-          regarding my experience with the product (optional).
+          I would like to receive personalized tips and recommendations
+          for salt reduction (optional).
         </CheckboxField>
 
         <CheckboxField

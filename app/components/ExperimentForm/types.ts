@@ -4,28 +4,29 @@ export interface FormData {
   email: string;
   phone: string;
   ageGroup: string;
-  facilityName: string;
+  occupation: string;
 
-  // Step 2: Address
-  streetAddress: string;
-  city: string;
-  state: string;
-  zipCode: string;
-  country: string;
+  // Step 2: Current Salt Habits
+  dailySaltIntake: string;
+  mainSaltSources: string[];
+  eatingOutFrequency: string;
+  processedFoodFrequency: string;
 
-  // Step 3: Product Selection
-  productVariant: string;
-  quantity: string;
-  primaryUse: string;
-
-  // Step 4: Health Information
-  dietaryRestrictions: string;
+  // Step 3: Health & Goals
+  healthConditions: string;
   sodiumRestriction: string;
-  medicalConditions: string;
+  weightGoal: string;
+  saltReductionGoal: string;
 
-  // Step 5: Consent
-  researchConsent: boolean;
-  followUpConsent: boolean;
+  // Step 4: Preferences & Lifestyle
+  tastePreferences: string[];
+  cookingFrequency: string;
+  familySize: string;
+  budgetRange: string;
+
+  // Step 5: Consent & Planning
+  dataCollectionConsent: boolean;
+  personalizedTipsConsent: boolean;
   termsAgreement: boolean;
   privacyPolicy: boolean;
 }

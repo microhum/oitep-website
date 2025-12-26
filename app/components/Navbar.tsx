@@ -85,7 +85,7 @@ export default function Navbar() {
           </div>
           <div className="hidden sm:ml-6 sm:flex sm:items-center">
             <button className="bg-meadow-3 hover:cursor-pointer hover:border-white border-meadow-3 border-2 text-white px-4 py-1 rounded-lg text-md font-semibold transition-all duration-100 transform">
-              Try it out
+              Create Your Personal Plan
             </button>
           </div>
           <div className="-mr-2 flex items-center sm:hidden">
@@ -139,8 +139,8 @@ export default function Navbar() {
         </div>
         <div className="pt-4 pb-3 border-t border-gray-200">
           <div className="flex items-center px-4">
-            <button className="bg-meadow-2 hover:bg-meadow-1 text-white px-4 py-2 rounded-md text-sm font-medium w-full transition-colors">
-              Try it out
+            <button className="bg-meadow-3 hover:bg-meadow-2 text-white px-4 py-2 rounded-md text-sm font-medium w-full transition-colors">
+              Create Your Personal Plan
             </button>
           </div>
         </div>

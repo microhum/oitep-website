@@ -9,7 +9,7 @@ interface UseExperimentFormReturn {
   currentStep: number;
   isSubmitting: boolean;
   isSubmitted: boolean;
-  updateFormData: (field: keyof FormData, value: string | boolean) => void;
+  updateFormData: (field: keyof FormData, value: string | boolean | string[]) => void;
   setCurrentStep: (step: number) => void;
   nextStep: () => boolean;
   prevStep: () => void;
@@ -26,9 +26,9 @@ export const useExperimentForm = (): UseExperimentFormReturn => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const updateFormData = useCallback((field: keyof FormData, value: string | boolean) => {
+  const updateFormData = useCallback((field: keyof FormData, value: string | boolean | string[]) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-    
+
     // Clear error for this field when user starts typing
     if (errors[field]) {
       setErrors((prev) => {
