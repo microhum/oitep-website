@@ -1,11 +1,14 @@
 import type { NextConfig } from "next";
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+
+initOpenNextCloudflareForDev();
 
 const nextConfig: NextConfig = {
-  // Configure for Cloudflare Pages deployment
-  trailingSlash: true,
-  images: {
-    unoptimized: true
-  },
+  experimental: {
+    serverActions: {
+      allowedOrigins: ["localhost:3000"]
+    }
+  }
 };
 
 export default nextConfig;

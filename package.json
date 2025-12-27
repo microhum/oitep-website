@@ -5,17 +5,23 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "start": "next start",
     "lint": "eslint",
     "commit": "cz"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.14.7",
     "googleapis": "^169.0.0",
     "lefthook": "^2.0.13",
     "lucide-react": "^0.562.0",
-    "next": "16.1.0",
+    "next": "15.5.9",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "wrangler": "^4.54.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.2.0",
