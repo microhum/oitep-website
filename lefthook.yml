@@ -3,9 +3,16 @@
 #   Refer for explanation to following link:
 #   https://lefthook.dev/configuration/
 #
+
+prepare-commit-msg:
+  commands:
+    commitzen:
+      interactive: true
+      run: bunx cz --hook # Or npx cz --hook
+
 commit-msg:
-  jobs:
-    - name: commitlint
+  commands:
+    "lint commit message":
       run: bunx commitlint --edit {1}
 
 pre-push:
@@ -16,12 +23,12 @@ pre-push:
         - security
       run: bun audit
     - name: lint check
-      run: bun run lint
+      run: bunx lint
       glob: "*.{js,ts,jsx,tsx}"
 
 pre-commit:
   parallel: true
   jobs:
     - name: lint staged files
-      run: bun run lint --fix {staged_files}
+      run: bunx lint --fix {staged_files}
       glob: "*.{js,ts,jsx,tsx}"
