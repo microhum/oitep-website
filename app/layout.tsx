@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import { Kanit } from "next/font/google";
 import "./globals.css";
-
-const font = Kanit({
-  variable: "--font-kanit",
-  weight: "200",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "OITE:P - Redirecting...",
@@ -24,9 +17,7 @@ export default function RootLayout({
       <head>
         <meta name="apple-mobile-web-app-title" content="OITE:P" />
       </head>
-      <body className={`${font.variable} antialiased`}>
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

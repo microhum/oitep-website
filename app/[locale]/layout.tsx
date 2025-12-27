@@ -1,7 +1,19 @@
 import type { Metadata } from "next";
+import { Inter, Kanit } from "next/font/google";
 import Navbar from "../components/Navbar";
 import { LocaleProvider } from "../components/LocaleProvider";
 import { Locale, hasLocale } from "../translations";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const kanit = Kanit({
+  variable: "--font-kanit",
+  weight: ["200", "300", "400", "500", "600", "700"],
+  subsets: ["latin", "thai"],
+});
 
 export const metadata: Metadata = {
   title: "OITE:P - Reduce Salt Craving with Odor-Based Solutions",
@@ -84,10 +96,16 @@ export default async function LocaleLayout({
     return <div>Invalid locale</div>;
   }
 
+  const fontClass = locale === "en" ? inter.variable : kanit.variable;
+  const fontFamily =
+    locale === "en" ? "var(--font-inter)" : "var(--font-kanit)";
+
   return (
-    <LocaleProvider locale={locale as Locale}>
-      <Navbar />
-      {children}
-    </LocaleProvider>
+    <div className={fontClass} style={{ fontFamily }}>
+      <LocaleProvider locale={locale as Locale}>
+        <Navbar />
+        {children}
+      </LocaleProvider>
+    </div>
   );
 }

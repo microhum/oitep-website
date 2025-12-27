@@ -5,11 +5,11 @@ import { useRouter } from "next/navigation";
 import { useLocale } from "./LocaleProvider";
 
 export default function Hero() {
-  const { translations } = useLocale();
+  const { locale, translations } = useLocale();
   const router = useRouter();
 
   const handleTryItOut = () => {
-    router.push("/create-planner");
+    router.push(`/${locale}/create-planner`);
   };
   return (
     <section className="h-[80vh] flex items-center justify-center bg-linear-to-br from-meadow-1 via-meadow-2 to-meadow-3 overflow-hidden">

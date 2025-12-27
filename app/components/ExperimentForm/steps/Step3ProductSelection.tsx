@@ -9,6 +9,7 @@ import {
   WEIGHT_GOAL_OPTIONS,
   SALT_REDUCTION_GOAL_OPTIONS
 } from '../utils';
+import { useLocale } from '../../LocaleProvider';
 
 interface Step3HealthGoalsProps {
   formData: FormData;
@@ -21,45 +22,47 @@ export const Step3ProductSelection: React.FC<Step3HealthGoalsProps> = ({
   onChange,
   errors,
 }) => {
+  const { translations } = useLocale();
+
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">
-        Health & Goals
+        {translations.formSteps.healthGoals.title}
       </h2>
       <p className="text-gray-800 mb-6">
-        Tell us about your health concerns and salt reduction goals.
+        {translations.formSteps.healthGoals.description}
       </p>
 
       <TextareaField
-        label="Health Conditions or Medical History"
+        label={translations.formSteps.healthGoals.healthConditions}
         value={formData.healthConditions}
         onChange={(value) => onChange('healthConditions', value)}
-        placeholder="Please describe any health conditions that might be affected by salt intake..."
+        placeholder={translations.formSteps.healthGoals.healthConditionsPlaceholder}
         rows={3}
       />
 
       <SelectField
-        label="Current Sodium Restriction Level"
+        label={translations.formSteps.healthGoals.sodiumRestriction}
         value={formData.sodiumRestriction}
         onChange={(value) => onChange('sodiumRestriction', value)}
         options={SODIUM_RESTRICTION_OPTIONS}
-        placeholder="Select if applicable"
+        placeholder={translations.formSteps.healthGoals.selectApplicable}
       />
 
       <SelectField
-        label="Weight Management Goal"
+        label={translations.formSteps.healthGoals.weightGoal}
         value={formData.weightGoal}
         onChange={(value) => onChange('weightGoal', value)}
         options={WEIGHT_GOAL_OPTIONS}
-        placeholder="Select your goal"
+        placeholder={translations.formSteps.healthGoals.selectGoal}
       />
 
       <SelectField
-        label="Salt Reduction Goal"
+        label={translations.formSteps.healthGoals.saltReductionGoal}
         value={formData.saltReductionGoal}
         onChange={(value) => onChange('saltReductionGoal', value)}
         options={SALT_REDUCTION_GOAL_OPTIONS}
-        placeholder="Select your goal"
+        placeholder={translations.formSteps.healthGoals.selectGoal}
       />
     </div>
   );

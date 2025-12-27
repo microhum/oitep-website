@@ -20,6 +20,10 @@ export default function Navbar() {
     router.push(newPath);
   };
 
+  const handleCreatePlan = () => {
+    router.push(`/${locale}/create-planner`);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -41,7 +45,7 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="shrink-0 flex items-center">
-              <Link href="/" className="flex items-center">
+              <Link href={`/${locale}`} className="flex items-center">
                 <Image
                   src="/static/logo/logo.svg"
                   alt="OITEP Logo"
@@ -95,7 +99,10 @@ export default function Navbar() {
             </div>
           </div>
           <div className="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-4">
-            <button className="bg-meadow-3 hover:cursor-pointer hover:border-white border-meadow-3 border-2 text-white px-4 py-1 rounded-lg text-md font-semibold transition-all duration-100 transform">
+            <button
+              onClick={handleCreatePlan}
+              className="bg-meadow-3 hover:cursor-pointer hover:border-white border-meadow-3 border-2 text-white px-4 py-1 rounded-lg text-md font-semibold transition-all duration-100 transform"
+            >
               {translations.navigation.createPlan}
             </button>
             <button
@@ -162,7 +169,10 @@ export default function Navbar() {
         </div>
         <div className="pt-4 pb-3 border-t border-gray-200">
           <div className="flex items-center px-4">
-            <button className="bg-meadow-3 hover:bg-meadow-2 text-white px-4 py-2 rounded-md text-sm font-medium w-full transition-colors">
+            <button
+              onClick={handleCreatePlan}
+              className="bg-meadow-3 hover:bg-meadow-2 text-white px-4 py-2 rounded-md text-sm font-medium w-full transition-colors"
+            >
               {translations.navigation.createPlan}
             </button>
           </div>
