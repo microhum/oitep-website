@@ -16,6 +16,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="apple-mobile-web-app-title" content="OITE:P" />
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="81a97c03-48c0-4191-aaff-a9a085360256"
+        ></script>
       </head>
       <body className="antialiased">{children}</body>
     </html>
