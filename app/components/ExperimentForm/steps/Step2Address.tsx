@@ -10,6 +10,7 @@ import {
   EATING_OUT_FREQUENCY_OPTIONS,
   PROCESSED_FOOD_FREQUENCY_OPTIONS
 } from '../utils';
+import { useLocale } from '../../LocaleProvider';
 
 interface Step2AddressProps {
   formData: FormData;
@@ -22,6 +23,8 @@ export const Step2Address: React.FC<Step2AddressProps> = ({
   onChange,
   errors,
 }) => {
+  const { translations } = useLocale();
+
   const handleSaltSourceChange = (source: string, checked: boolean) => {
     const currentSources = formData.mainSaltSources || [];
     const newSources = checked
@@ -33,25 +36,25 @@ export const Step2Address: React.FC<Step2AddressProps> = ({
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">
-        Current Salt Habits
+        {translations.formSteps.saltHabits.title}
       </h2>
       <p className="text-gray-800 mb-6">
-        Help us understand your current salt intake patterns and habits.
+        {translations.formSteps.saltHabits.description}
       </p>
 
       <SelectField
-        label="Estimated Daily Salt Intake"
+        label={translations.formSteps.saltHabits.estimatedDailyIntake}
         value={formData.dailySaltIntake}
         onChange={(value) => onChange('dailySaltIntake', value)}
         options={DAILY_SALT_INTAKE_OPTIONS}
-        placeholder="Select your estimated daily intake"
+        placeholder={translations.formSteps.saltHabits.selectIntake}
       />
 
       <div className="space-y-3">
         <label className="block text-sm font-medium text-gray-900">
-          Main Sources of Salt in Your Diet
+          {translations.formSteps.saltHabits.mainSources}
         </label>
-        <p className="text-sm text-gray-600 mb-3">Select all that apply</p>
+        <p className="text-sm text-gray-600 mb-3">{translations.formSteps.saltHabits.selectAllApply}</p>
         <div className="space-y-2">
           {MAIN_SALT_SOURCES_OPTIONS.map((option) => (
             <CheckboxField
@@ -67,21 +70,21 @@ export const Step2Address: React.FC<Step2AddressProps> = ({
       </div>
 
       <SelectField
-        label="How Often Do You Eat Out or Order Takeout?"
+        label={translations.formSteps.saltHabits.eatingOutFrequency}
         value={formData.eatingOutFrequency}
         onChange={(value) => onChange('eatingOutFrequency', value)}
         options={EATING_OUT_FREQUENCY_OPTIONS}
-        placeholder="Select frequency"
+        placeholder={translations.formSteps.saltHabits.selectFrequency}
       />
 
       <SelectField
-        label="How Often Do You Eat Processed Foods?"
+        label={translations.formSteps.saltHabits.processedFoodFrequency}
         value={formData.processedFoodFrequency}
         onChange={(value) => onChange('processedFoodFrequency', value)}
         options={PROCESSED_FOOD_FREQUENCY_OPTIONS}
-        placeholder="Select frequency"
+        placeholder={translations.formSteps.saltHabits.selectFrequency}
       />
-      <p className="text-sm text-gray-600">Canned, packaged, or ready-to-eat foods</p>
+      <p className="text-sm text-gray-600">{translations.formSteps.saltHabits.processedFoodNote}</p>
     </div>
   );
 };

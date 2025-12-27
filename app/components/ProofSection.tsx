@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import {
   BarChart3,
@@ -6,15 +8,17 @@ import {
   CheckCircle,
   Download,
 } from "lucide-react";
+import { useLocale } from "./LocaleProvider";
 
 export default function ProofSection() {
+  const { translations } = useLocale();
   return (
     <section className="py-16 md:py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Neuro-Science Validation
+            {translations.proofSection.sectionTitle}
           </h2>
           <div className="flex items-center justify-center space-x-3 mb-6">
             <Image
@@ -25,7 +29,7 @@ export default function ProofSection() {
               className="h-8 w-auto object-contain"
             />
             <span className="text-lg md:text-xl text-gray-600 font-medium">
-              Pilot Study using EEG (Electroencephalography) at Siriraj Hospital
+              {translations.proofSection.pilotStudy}
             </span>
           </div>
         </div>
@@ -39,17 +43,16 @@ export default function ProofSection() {
                 <BarChart3 className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-gray-900">
-                Beta Rhythm
+                {translations.proofSection.betaRhythm}
               </h3>
             </div>
             <p className="text-gray-700 leading-relaxed">
-              Confirmed brainwave activation indicating real saltiness
-              perception.
+              {translations.proofSection.betaDescription}
             </p>
             <div className="mt-4 pt-4 border-t border-meadow-200">
               <div className="flex items-center text-sm text-meadow-3 font-medium">
                 <CheckCircle className="w-4 h-4 mr-2" />
-                EEG Brainwave Analysis
+                {translations.proofSection.eegAnalysis}
               </div>
             </div>
           </div>
@@ -61,17 +64,16 @@ export default function ProofSection() {
                 <TrendingUp className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-gray-900">
-                1.5x Impulse
+                {translations.proofSection.impulseTitle}
               </h3>
             </div>
             <p className="text-gray-700 leading-relaxed">
-              Significant increase in salt impulse response with Beef Odor
-              variant.
+              {translations.proofSection.impulseDescription}
             </p>
             <div className="mt-4 pt-4 border-t border-meadow-200">
               <div className="flex items-center text-sm text-meadow-3 font-medium">
                 <CheckCircle className="w-4 h-4 mr-2" />
-                Measurable Neuro-Response
+                {translations.proofSection.neuroResponse}
               </div>
             </div>
           </div>
@@ -83,16 +85,16 @@ export default function ProofSection() {
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-gray-900">
-                100% Safety
+                {translations.proofSection.safetyTitle}
               </h3>
             </div>
             <p className="text-gray-700 leading-relaxed">
-              Safety profile with no chemical interaction with food itself.
+              {translations.proofSection.safetyDescription}
             </p>
             <div className="mt-4 pt-4 border-t border-meadow-200">
               <div className="flex items-center text-sm text-meadow-3 font-medium">
                 <CheckCircle className="w-4 h-4 mr-2" />
-                Non-Invasive Technology
+                {translations.proofSection.nonInvasive}
               </div>
             </div>
           </div>

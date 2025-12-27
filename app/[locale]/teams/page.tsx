@@ -1,5 +1,5 @@
-import Teams from "../components/Teams";
-import Footer from "../components/Footer";
+import Teams from "../../components/Teams";
+import Footer from "../../components/Footer";
 
 export default function TeamsPage() {
   return (

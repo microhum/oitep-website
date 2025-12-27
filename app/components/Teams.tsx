@@ -1,11 +1,15 @@
+"use client";
+
 import Image from "next/image";
+import { useLocale } from "./LocaleProvider";
 
 export default function Teams() {
+  const { translations } = useLocale();
   return (
     <section className="min-h-screen bg-white">
       <div className=" bg-linear-to-br from-meadow-1 via-meadow-2 to-meadow-2 px-6 py-6 pt-24  text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 md:mb-12">
         <div className="inline-flex w-full justify-center gap-3">
-          <h1>Teams</h1>
+          <h1>{translations.teams.title}</h1>
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 w-full">
@@ -21,14 +25,13 @@ export default function Teams() {
             <div className="absolute inset-0 bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
             <div className="relative z-10 p-6 flex flex-col justify-end h-full text-white">
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">
-                Kasidit Wiboonkiat
+                {translations.teams.members.kasidit.name}
               </h3>
               <p className="text-sm sm:text-base text-gray-200 mb-1">
-                Medicine, Faculty of Medicine Siriraj Hospital, Mahidol
-                University
+                {translations.teams.members.kasidit.education}
               </p>
               <p className="text-sm sm:text-base font-semibold text-meadow-2">
-                Co-Founder & Chief Product Officer (CFO)
+                {translations.teams.members.kasidit.role}
               </p>
             </div>
           </div>
@@ -44,13 +47,13 @@ export default function Teams() {
             <div className="absolute inset-0 bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
             <div className="relative z-10 p-6 flex flex-col justify-end h-full text-white">
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">
-                Pongpanoot Kasembunyakorn
+                {translations.teams.members.pongpanoot.name}
               </h3>
               <p className="text-sm sm:text-base text-gray-200 mb-1">
-                Biomedical Engineering, Srinakharinwirot University
+                {translations.teams.members.pongpanoot.education}
               </p>
               <p className="text-sm sm:text-base font-semibold text-meadow-2">
-                Co-Founder & Chief Executive Officer (CEO)
+                {translations.teams.members.pongpanoot.role}
               </p>
             </div>
           </div>
@@ -66,14 +69,13 @@ export default function Teams() {
             <div className="absolute inset-0 bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
             <div className="relative z-10 p-6 flex flex-col justify-end h-full text-white">
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">
-                Guntee Doungmanee
+                {translations.teams.members.guntee.name}
               </h3>
               <p className="text-sm sm:text-base text-gray-200 mb-1">
-                Computer Engineering, King Mongkut&#39;s University of
-                Technology Thonburi
+                {translations.teams.members.guntee.education}
               </p>
               <p className="text-sm sm:text-base font-semibold text-meadow-2">
-                Co-Founder & Chief Technology Officer (CTO)
+                {translations.teams.members.guntee.role}
               </p>
             </div>
           </div>

@@ -5,6 +5,7 @@ import {
 } from '../FormFields';
 import { FormData, FormErrors } from '../types';
 import { AGE_GROUP_OPTIONS } from '../utils';
+import { useLocale } from '../../LocaleProvider';
 
 interface Step1BasicInfoProps {
   formData: FormData;
@@ -17,15 +18,17 @@ export const Step1BasicInfo: React.FC<Step1BasicInfoProps> = ({
   onChange,
   errors,
 }) => {
+  const { translations } = useLocale();
+
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">
-        Basic Information
+        {translations.formSteps.basicInfo.title}
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <InputField
-          label="Full Name"
+          label={translations.formSteps.basicInfo.fullName}
           required
           type="text"
           value={formData.fullName}
@@ -35,7 +38,7 @@ export const Step1BasicInfo: React.FC<Step1BasicInfoProps> = ({
         />
 
         <InputField
-          label="Email Address"
+          label={translations.formSteps.basicInfo.emailAddress}
           required
           type="email"
           value={formData.email}
@@ -45,7 +48,7 @@ export const Step1BasicInfo: React.FC<Step1BasicInfoProps> = ({
         />
 
         <InputField
-          label="Phone Number"
+          label={translations.formSteps.basicInfo.phoneNumber}
           required
           type="tel"
           value={formData.phone}
@@ -55,7 +58,7 @@ export const Step1BasicInfo: React.FC<Step1BasicInfoProps> = ({
         />
 
         <SelectField
-          label="Age Group"
+          label={translations.formSteps.basicInfo.ageGroup}
           required
           value={formData.ageGroup}
           onChange={(value) => onChange('ageGroup', value)}
@@ -65,11 +68,11 @@ export const Step1BasicInfo: React.FC<Step1BasicInfoProps> = ({
       </div>
 
       <InputField
-        label="Occupation"
+        label={translations.formSteps.basicInfo.occupation}
         type="text"
         value={formData.occupation}
         onChange={(value) => onChange('occupation', value)}
-        placeholder="Your job or profession"
+        placeholder={translations.formSteps.basicInfo.occupationPlaceholder}
         className="w-full"
       />
     </div>

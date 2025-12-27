@@ -8,6 +8,7 @@ import { Step5Consent } from "./steps/Step5Consent";
 import { useExperimentForm } from "./useExperimentForm";
 import { formatFormDataForSubmission, scrollToTop } from "./utils";
 import { FormData } from "./types";
+import { useLocale } from "../LocaleProvider";
 
 const ExperimentForm: React.FC = () => {
   const {
@@ -22,6 +23,7 @@ const ExperimentForm: React.FC = () => {
     prevStep,
     handleSubmit,
   } = useExperimentForm();
+  const { translations } = useLocale();
 
   const totalSteps = 5;
 
@@ -47,7 +49,7 @@ const ExperimentForm: React.FC = () => {
 
     // Show success message
     alert(
-      "Your personal salt planner has been created! We'll send you personalized recommendations soon."
+      `${translations.createPlanner.successMessage} ${translations.createPlanner.recommendationsMessage}`
     );
   };
 
@@ -72,12 +74,12 @@ const ExperimentForm: React.FC = () => {
     return (
       <div className="min-h-screen bg-linear-to-br from-meadow-1 via-meadow-2 to-meadow-3 flex items-center justify-center">
         <div className="text-center text-white">
-          <h1 className="text-4xl font-bold mb-4">Thank You!</h1>
+          <h1 className="text-4xl font-bold mb-4">{translations.createPlanner.thankYou}</h1>
           <p className="text-xl">
-            Your personal salt planner has been created successfully.
+            {translations.createPlanner.successMessage}
           </p>
           <p className="text-lg mt-2">
-            We&apos;ll send you personalized recommendations soon.
+            {translations.createPlanner.recommendationsMessage}
           </p>
         </div>
       </div>
@@ -110,11 +112,10 @@ const ExperimentForm: React.FC = () => {
             />
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Create Your Personal Salt Planner
+            {translations.createPlanner.title}
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-            Take control of your salt intake with personalized recommendations.
-            Get a customized plan based on your current habits and health goals.
+            {translations.createPlanner.subtitle}
           </p>
         </div>
 
@@ -122,10 +123,10 @@ const ExperimentForm: React.FC = () => {
         <div className="mb-8">
           <div className="flex items-center justify-between mb-2">
             <span className="text-white font-medium">
-              Step {currentStep} of {totalSteps}
+              {translations.createPlanner.stepOf.replace('{currentStep}', currentStep.toString()).replace('{totalSteps}', totalSteps.toString())}
             </span>
             <span className="text-white/80">
-              {Math.round((currentStep / totalSteps) * 100)}% Complete
+              {translations.createPlanner.percentComplete.replace('{percent}', Math.round((currentStep / totalSteps) * 100).toString())}
             </span>
           </div>
           <div className="w-full bg-white/20 rounded-full h-2">
@@ -184,7 +185,7 @@ const ExperimentForm: React.FC = () => {
             {Object.keys(errors).length > 0 && (
               <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-lg">
                 <h3 className="text-red-800 font-medium mb-2">
-                  Please correct the following errors:
+                  {translations.createPlanner.errorsTitle}
                 </h3>
                 <ul className="text-red-700 text-sm space-y-1">
                   {Object.entries(errors).map(([field, error]) => (
@@ -207,7 +208,7 @@ const ExperimentForm: React.FC = () => {
                 }`}
                 aria-label="Go to previous step"
               >
-                Previous
+                {translations.createPlanner.previous}
               </button>
 
               {currentStep < 5 ? (
@@ -218,7 +219,7 @@ const ExperimentForm: React.FC = () => {
                   className="bg-meadow-3 hover:bg-meadow-2 text-white px-6 py-3 rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   aria-label="Go to next step"
                 >
-                  Next Step
+                  {translations.createPlanner.nextStep}
                 </button>
               ) : (
                 <button
@@ -227,7 +228,7 @@ const ExperimentForm: React.FC = () => {
                   className="bg-meadow-3 hover:bg-meadow-2 text-white px-6 py-3 rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   aria-label="Create personal planner"
                 >
-                  {isSubmitting ? "Creating..." : "Create My Planner"}
+                  {isSubmitting ? translations.createPlanner.creating : translations.createPlanner.createPlanner}
                 </button>
               )}
             </div>

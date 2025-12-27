@@ -2,12 +2,14 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useLocale } from "./LocaleProvider";
 
 export default function Hero() {
+  const { locale, translations } = useLocale();
   const router = useRouter();
 
   const handleTryItOut = () => {
-    router.push("/create-planner");
+    router.push(`/${locale}/create-planner`);
   };
   return (
     <section className="h-[80vh] flex items-center justify-center bg-linear-to-br from-meadow-1 via-meadow-2 to-meadow-3 overflow-hidden">
@@ -39,7 +41,7 @@ export default function Hero() {
           {/* Left Side - Quote (Desktop First) */}
           <div className="order-2 lg:order-1 text-center lg:text-left">
             <h1 className="text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl font-bold text-white mb-6 md:mb-8 leading-tight">
-              Reduce Your Salt Craving With{" "}
+              {translations.hero.reduceSaltCraving}{" "}
               <span className="text-meadow-3 relative inline-flex items-center">
                 <Image
                   src="/static/logo/logo.svg"
@@ -51,14 +53,13 @@ export default function Hero() {
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90 mb-8 md:mb-12 max-w-2xl">
-              Designing environments that prioritize patient joy without
-              compromising health.
+              {translations.hero.designingEnvironments}
             </p>
             <button
               onClick={handleTryItOut}
               className="capitalize bg-meadow-3 hover:cursor-pointer hover:border-white border-meadow-3 border-2 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg text-sm sm:text-base lg:text-lg font-bold transition-all duration-100 transform"
             >
-              Create Your Personal Plan
+              {translations.hero.createPersonalPlan}
             </button>
           </div>
         </div>

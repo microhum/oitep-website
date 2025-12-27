@@ -3,6 +3,7 @@ import {
   CheckboxField,
 } from '../FormFields';
 import { FormData, FormErrors } from '../types';
+import { useLocale } from '../../LocaleProvider';
 
 interface Step5ConsentProps {
   formData: FormData;
@@ -15,21 +16,21 @@ export const Step5Consent: React.FC<Step5ConsentProps> = ({
   onChange,
   errors,
 }) => {
+  const { translations } = useLocale();
+
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">
-        Consent & Agreement
+        {translations.formSteps.consent.title}
       </h2>
 
       <div className="space-y-4">
         <div className="bg-meadow-1/20 border border-meadow-2 rounded-lg p-4">
           <h3 className="font-bold text-lg mb-2">
-            Personal Salt Usage Planner
+            {translations.formSteps.consent.plannerTitle}
           </h3>
           <p className="text-gray-700 mb-4">
-            By submitting this form, you&apos;ll receive personalized salt reduction recommendations
-            based on your current habits and goals. Your information helps us create
-            tailored plans to support healthier eating patterns.
+            {translations.formSteps.consent.plannerDescription}
           </p>
         </div>
 
@@ -39,8 +40,7 @@ export const Step5Consent: React.FC<Step5ConsentProps> = ({
           error={errors.dataCollectionConsent}
           required
         >
-          I consent to the collection and analysis of my salt usage data
-          to create a personalized reduction plan.
+          {translations.formSteps.consent.dataConsent}
         </CheckboxField>
 
         <CheckboxField
@@ -48,8 +48,7 @@ export const Step5Consent: React.FC<Step5ConsentProps> = ({
           onChange={(value) => onChange('personalizedTipsConsent', value)}
           error={errors.personalizedTipsConsent}
         >
-          I would like to receive personalized tips and recommendations
-          for salt reduction (optional).
+          {translations.formSteps.consent.tipsConsent}
         </CheckboxField>
 
         <CheckboxField
@@ -58,8 +57,7 @@ export const Step5Consent: React.FC<Step5ConsentProps> = ({
           error={errors.termsAgreement}
           required
         >
-          I have read and agree to the Terms and Conditions of this
-          experiment.
+          {translations.formSteps.consent.termsAgreement}
         </CheckboxField>
 
         <CheckboxField
@@ -68,8 +66,7 @@ export const Step5Consent: React.FC<Step5ConsentProps> = ({
           error={errors.privacyPolicy}
           required
         >
-          I have read and agree to the Privacy Policy and understand
-          how my data will be protected.
+          {translations.formSteps.consent.privacyAgreement}
         </CheckboxField>
       </div>
     </div>

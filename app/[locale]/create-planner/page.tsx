@@ -1,4 +1,4 @@
-import ExperimentForm from "../components/ExperimentForm";
+import ExperimentForm from "../../components/ExperimentForm";
 
 export const metadata = {
   title: "OITEP - Create Your Personal Salt Planner",
