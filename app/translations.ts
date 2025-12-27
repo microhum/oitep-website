@@ -8,6 +8,7 @@ import { contactSectionTranslations } from './translations/contactSection'
 import { footerTranslations } from './translations/footer'
 import { createPlannerTranslations } from './translations/createPlanner'
 import { formStepsTranslations } from './translations/formSteps'
+import { teamsTranslations } from './translations/teams'
 
 export type Locale = 'en' | 'th'
 
@@ -25,7 +26,8 @@ export const translations = {
     ...contactSectionTranslations.en,
     ...footerTranslations.en,
     ...createPlannerTranslations.en,
-    ...formStepsTranslations.en
+    ...formStepsTranslations.en,
+    ...teamsTranslations.en
   },
   th: {
     ...navigationTranslations.th,
@@ -37,7 +39,8 @@ export const translations = {
     ...contactSectionTranslations.th,
     ...footerTranslations.th,
     ...createPlannerTranslations.th,
-    ...formStepsTranslations.th
+    ...formStepsTranslations.th,
+    ...teamsTranslations.th
   }
 } as const
 
