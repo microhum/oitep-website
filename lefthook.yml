@@ -8,12 +8,12 @@ prepare-commit-msg:
   commands:
     commitzen:
       interactive: true
-      run: bunx cz --hook # Or npx cz --hook
+      run: bun run cz --hook # Or npx cz --hook
 
 commit-msg:
   commands:
     "lint commit message":
-      run: bunx commitlint --edit {1}
+      run: bun run commitlint --edit {1}
 
 pre-push:
   jobs:
@@ -23,12 +23,12 @@ pre-push:
         - security
       run: bun audit
     - name: lint check
-      run: bunx lint
+      run: bun run lint
       glob: "*.{js,ts,jsx,tsx}"
 
 pre-commit:
   parallel: true
   jobs:
     - name: lint staged files
-      run: bunx lint --fix {staged_files}
+      run: bun run lint --fix {staged_files}
       glob: "*.{js,ts,jsx,tsx}"
