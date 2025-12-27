@@ -1,14 +1,14 @@
-# Cloudflare Pages configuration
+# Cloudflare Pages configuration with Pages Functions
 name = "oitep-website"
 compatibility_date = "2024-01-01"
 
 [build]
 command = "bun run build"
-cwd = ""
+cwd = "."
 
 [env.production]
 compatibility_flags = ["nodejs_compat"]
 
 # Specify assets directory for static export
 [assets]
-directory = "./out"
+directory = "out"
