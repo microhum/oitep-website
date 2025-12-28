@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,11 +17,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="apple-mobile-web-app-title" content="OITE:P" />
-        <script
-          defer
+        <Script
           src="https://cloud.umami.is/script.js"
           data-website-id="81a97c03-48c0-4191-aaff-a9a085360256"
-        ></script>
+          strategy="afterInteractive"
+        />
       </head>
       <body className="antialiased">{children}</body>
     </html>
